@@ -1,6 +1,45 @@
-= brown_shoes
+= Brown Shoes
 
-Description goes here.
+A JRuby implementation of shoes
+
+==TODO:
+
+Shoes Element Skeletons:
+  [x]Stack
+  [x]Flow
+  [x]Button
+  [ ]Checkbox
+  [x]Edit_Box
+  [x]Edit_Line
+  [ ]Image
+  [ ]ListBox
+  [ ]TextBlock
+    [ ]Banner
+    [ ]Title
+    [ ]Subtitle
+    [ ]Tagline
+    [ ]Caption
+    [ ]Para
+    [ ]Inscription
+  [ ]Radio
+  [ ]Video
+  [ ]Window
+  [?]Timers
+  [?]Progress
+
+Java and/or Swing components not covered by the above:
+  [X]Scrollpane
+  [ ]2d drawing api
+  [ ]More layout options
+
+Other important things:
+  [ ]Attributes for application
+  [ ]Attributes for elements
+  [ ]Menu (file, edit, etc)
+==Down the road:
+
+  [ ]Application generator for packaging
+
 
 == Note on Patches/Pull Requests
  
@@ -12,6 +51,3 @@ Description goes here.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
-
-Copyright (c) 2010 Scott Werner. See LICENSE for details.
