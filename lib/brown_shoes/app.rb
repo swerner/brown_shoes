@@ -28,6 +28,12 @@ class App
     button
   end
   
+  def image(path, opts={})
+    image = Image.new(path, @current_panel, opts)
+    @elements[image.identifier] = image
+    image  
+  end
+  
   def edit_line(opts={})
     eline = Edit_line.new(@current_panel, opts)
     @elements[eline.identifier] = eline

@@ -11,6 +11,7 @@ require_rel 'brown_shoes/elements/flow'
 require_rel 'brown_shoes/elements/edit_line'
 require_rel 'brown_shoes/elements/edit_box'
 require_rel 'brown_shoes/elements/check'
+require_rel 'brown_shoes/elements/image'
 
 module Shoes
 
