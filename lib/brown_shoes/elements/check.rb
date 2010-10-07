@@ -5,9 +5,17 @@ module Shoes
     def initialize(parent, opts={}, &blk)
       super(opts)
       @check = javax.swing.JCheckBox.new()
-      @check.add_action_listener(&blk) unless blk.nil?
+      @check.add_item_listener(&blk) unless blk.nil?
       parent.add(@check)
       return @check
+    end
+    
+    def checked?
+      @check.isSelected()  
+    end
+    
+    def checked=(selected)
+      @check.setSelected(selected)
     end
     
     def to_java
