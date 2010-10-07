@@ -10,6 +10,7 @@ require_rel 'brown_shoes/elements/stack'
 require_rel 'brown_shoes/elements/flow'
 require_rel 'brown_shoes/elements/edit_line'
 require_rel 'brown_shoes/elements/edit_box'
+require_rel 'brown_shoes/elements/check'
 
 module Shoes
 

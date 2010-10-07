@@ -7,15 +7,13 @@ class Element
   end
   
   
-  #TODO: Move an element without changing the layout around it
-   
+  #TODO: Move an element without changing the layout around it   
   def displace(left, top)
     
   end
   
   
-  #TODO: Returns the vertical size of the element in pixels
-  
+  #TODO: Returns the vertical size of the element in pixels  
   def height
     
   end
@@ -33,22 +31,19 @@ class Element
   end
   
   
-  #TODO: Moves the element to a specific pixel position within its slot
-  
+  #TODO: Moves the element to a specific pixel position within its slot  
   def move(left, top)
     
   end
   
   
-  #TODO: Returns the object for the element's container: Stack or Flow
-  
+  #TODO: Returns the object for the element's container: Stack or Flow  
   def parent
     
   end
   
   
-  #TODO: Remove the element from the slot - deletes the element
-  
+  #TODO: Remove the element from the slot - deletes the element  
   def remove
     
   end
@@ -60,15 +55,13 @@ class Element
   end
   
   
-  #TODO: Returns a hash of the full set of styles for this element 
-  
+  #TODO: Returns a hash of the full set of styles for this element   
   def style
     
   end
   
   
-  #TODO: Changes the styles for this element
-  
+  #TODO: Changes the styles for this element  
   def style(styles={})
     
   end
@@ -84,15 +77,13 @@ class Element
   end
   
   
-  #TODO: Returns the pixel position of the top edge of the element
-  
+  #Returns the pixel position of the top edge of the element  
   def top
     self.to_java.getX()
   end
   
   
-  #TODO: Returns the pixel width for the element
-  
+  #TODO: Returns the pixel width for the element  
   def width
     
   end

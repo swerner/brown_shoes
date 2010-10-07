@@ -1,7 +1,7 @@
 module Shoes
 class Button < Element
 
-  attr_accessor :identifier, :button
+  attr_accessor :button
 
   def initialize(parent,opts={}, &blk)
     super(opts)

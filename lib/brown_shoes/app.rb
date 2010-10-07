@@ -39,6 +39,13 @@ class App
     @elements[tbox.identifier] = tbox
     tbox
   end
+  
+  def check(opts={}, &blk)
+    cbox = Check.new(@current_panel, opts)
+    @elements[cbox.identifier] = cbox
+    cbox
+  end
+  
   def stack(opts={}, &blk)
     tstack = Stack.new(opts)
     layout(tstack, &blk)

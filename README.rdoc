@@ -8,7 +8,7 @@ Shoes Element Skeletons:
   [x]Stack
   [x]Flow
   [x]Button
-  [ ]Checkbox
+  [x]Checkbox
   [x]Edit_Box
   [x]Edit_Line
   [ ]Image
