@@ -22,20 +22,21 @@ class App
   end
   
   def button(opts={}, &blk)
+    
     button = Button.new(@current_panel,opts, &blk)
-    @elements[button.identifier] = button.to_java
+    @elements[button.identifier] = button
     button
   end
   
   def edit_line(opts={})
     eline = Edit_line.new(@current_panel, opts)
-    @elements[eline.identifier] = eline.to_java
+    @elements[eline.identifier] = eline
     eline
   end
   
   def text_box(opts={})
     tbox = Text_box.new(@current_panel, opts)
-    @elements[tbox.identifier] = tbox.to_java
+    @elements[tbox.identifier] = tbox
     tbox
   end
   def stack(opts={}, &blk)

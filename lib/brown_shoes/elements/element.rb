@@ -21,17 +21,15 @@ class Element
   end
   
   
-  #TODO: Hide the element, so it cannot be seen
-  
+  #Hide the element, so it cannot be seen
   def hide
-    
+    self.to_java.setVisible(false)
   end
   
   
-  #TODO: Returns the pixel position of the left edge of the element
-  
+  #Returns the pixel position of the left edge of the element
   def left
-    
+    self.to_java.getY()
   end
   
   
@@ -56,10 +54,9 @@ class Element
   end
   
   
-  #TODO: Reveals the element if it is hidden
-  
+  #Reveals the element if it is hidden
   def show
-    
+    self.to_java.setVisible(true)
   end
   
   
@@ -77,17 +74,20 @@ class Element
   end
   
   
-  #TODO: Hides an element if shown, or shows an element if hidden
- 
+  #Hides an element if shown, or shows an element if hidden
   def toggle
-    
+    if(self.to_java.isVisible)
+      self.hide
+    else
+      self.show
+    end
   end
   
   
   #TODO: Returns the pixel position of the top edge of the element
   
   def top
-    
+    self.to_java.getX()
   end
   
   

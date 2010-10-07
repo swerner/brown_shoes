@@ -1,3 +1,5 @@
+require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+
 describe "Elementary Button Example" do
   before(:all) do
     @gui = Shoes.app do
@@ -5,11 +7,11 @@ describe "Elementary Button Example" do
         edit_line :id => "edit"
         
         button :text => "Change to Hello", :id => 'button_one' do
-          @elements['edit'].setText("Hello")
+          @elements['edit'].to_java.setText("Hello")
         end
         
         button :text => 'Change to Goodbye', :id => 'button_two' do
-          @elements['edit'].setText("Goodbye")
+          @elements['edit'].to_java.setText("Goodbye")
         end
       
       end
@@ -23,13 +25,13 @@ describe "Elementary Button Example" do
   end
   
   it "Should make the edit_box's contents say 'Hello' when button_one is clicked" do
-    @gui.elements['button_one'].doClick()
-    @gui.elements['edit'].getText.should == 'Hello'
+    @gui.elements['button_one'].to_java.doClick()
+    @gui.elements['edit'].to_java.getText.should == 'Hello'
   end
   
   it "Should make the edit_box's contents say 'Goodbye' when button_two is clicked" do
-    @gui.elements['button_two'].doClick()
-    @gui.elements['edit'].getText.should == 'Goodbye'
+    @gui.elements['button_two'].to_java.doClick()
+    @gui.elements['edit'].to_java.getText.should == 'Goodbye'
   end
   
   after(:all) do

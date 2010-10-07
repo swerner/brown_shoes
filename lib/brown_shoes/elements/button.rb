@@ -7,7 +7,7 @@ class Button < Element
     super(opts)
     opts[:text] ||= "Button"
     @button = javax.swing.JButton.new(opts[:text])
-    @button.add_action_listener(&blk)
+    @button.add_action_listener(&blk) unless blk.nil?
     parent.add(@button)
     return @button      
   end
