@@ -1,17 +1,20 @@
 require 'java'
 
 require 'rubygems'
-require 'require_all'
 
-require_rel 'brown_shoes/app'
-require_rel 'brown_shoes/elements/element'
-require_rel 'brown_shoes/elements/button'
-require_rel 'brown_shoes/elements/stack'
-require_rel 'brown_shoes/elements/flow'
-require_rel 'brown_shoes/elements/edit_line'
-require_rel 'brown_shoes/elements/edit_box'
-require_rel 'brown_shoes/elements/check'
-require_rel 'brown_shoes/elements/image'
+BROWN_PATH = "brown_shoes/"
+['app',
+'elements/element',
+'elements/button',
+'elements/stack',
+'elements/flow',
+'elements/edit_line',
+'elements/edit_box',
+'elements/check',
+'elements/image'].each do |library|
+  require BROWN_PATH + library
+end
+
 
 module Shoes
 
