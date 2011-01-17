@@ -25,8 +25,8 @@ describe "Basic Element Methods" do
     @gui.elements['button_two'].left.should be 0
   end
   
-  it "Should return 0 for top for button_two" do
-    @gui.elements['button_two'].top.should be 147
+  it "Should return 145 for top for button_two" do
+    @gui.elements['button_two'].top.should be 145
   end
   
   it "Should make button_one invisible when hide is called" do
