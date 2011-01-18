@@ -8,8 +8,13 @@ class Button < Element
     opts[:text] ||= "Button"
     @button = javax.swing.JButton.new(opts[:text])
     @button.add_action_listener(&blk) unless blk.nil?
+		@button.set_location(0,10)
+		@button.set_size(50,35)
+		
     parent.add(@button)
-    return @button      
+		parent.revalidate
+		parent.set_visible(true)
+    return @button
   end
   
   def to_java

@@ -14,9 +14,10 @@ class App
      
     @frame.add(@global_panel)
     @frame.setDefaultCloseOperation(javax.swing.JFrame::EXIT_ON_CLOSE)
-    @frame.pack()
     if(opts[:width] && opts[:height])
       @frame.setSize(opts[:width], opts[:height])
+		else
+			@frame.setSize(500,500)
     end
     @frame.set_visible(true)
   end
