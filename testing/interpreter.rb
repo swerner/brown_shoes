@@ -1,4 +1,6 @@
-require '../lib/brown_shoes'
+
+$LOAD_PATH.unshift('../lib/brown_shoes/')
+$LOAD_PATH.unshift('../lib/')
 java_import 'org.jruby.embed.ScriptingContainer'
 java_import 'org.jruby.embed.LocalVariableBehavior'
 java_import 'org.jruby.embed.LocalContextScope'
