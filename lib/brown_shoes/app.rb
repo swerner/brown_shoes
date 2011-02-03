@@ -22,12 +22,17 @@ class App
   end
   
   def button(opts={}, &blk)
-    
     button = Button.new(@current_panel,opts, &blk)
     @elements[button.identifier] = button
     button
   end
   
+	def para(text, opts={})
+		paragraph = Para.new(text, @current_panel, opts)
+		@elements[paragraph.identifier] = paragraph
+		paragraph
+	end
+
   def image(path, opts={})
     image = Image.new(path, @current_panel, opts)
     @elements[image.identifier] = image

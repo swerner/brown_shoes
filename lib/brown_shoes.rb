@@ -6,6 +6,7 @@ BROWN_PATH = "brown_shoes/"
 ['app',
 'elements/element',
 'elements/button',
+'elements/para',
 'elements/stack',
 'elements/flow',
 'elements/edit_line',
