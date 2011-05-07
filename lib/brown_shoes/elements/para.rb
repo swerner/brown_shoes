@@ -12,5 +12,9 @@ module Shoes
 		def to_java
 			@para.to_java
 		end
+
+		def text=(text)
+			@para.set_text(text)
+		end
 	end
 end

@@ -16,5 +16,25 @@ class Button < Element
     @button.to_java
   end
 
+	def text=(text)
+		@button.set_text(text)
+	end
+	
+	def text
+		@button.get_text
+	end
+
+	def lock
+		@button.set_enabled(false)
+	end
+
+	def unlock
+		@button.set_enabled(true)
+	end
+
+	def locked?
+		!@button.is_enabled()
+	end
+
 end
 end
