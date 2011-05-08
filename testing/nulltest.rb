@@ -5,7 +5,9 @@ require 'brown_shoes'
 
 Shoes.app do
 	button :id =>'button', :text => "Hello" do
-		puts @elements['button'].to_java.get_x
-		puts @elements['button'].to_java.get_y
+		b = @elements['button'].to_java
+		b.set_location(b.getX+10, b.getX)
+		puts @elements['button'].to_java.getX
+		puts @elements['button'].to_java.getY
 	end
 end
