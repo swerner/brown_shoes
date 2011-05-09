@@ -1,9 +1,10 @@
 module Shoes
 class Element
-  attr_accessor :identifier
+  attr_accessor :identifier, :parent
 
-  def initialize(opts={})
+  def initialize(parent, opts={})
     @identifier = opts[:id]
+		@parent = parent
   end
   
   
@@ -35,13 +36,6 @@ class Element
   def move(left, top)
     
   end
-  
-  
-  #TODO: Returns the object for the element's container: Stack or Flow  
-  def parent
-    
-  end
-  
   
   #TODO: Remove the element from the slot - deletes the element  
   def remove

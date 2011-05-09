@@ -4,16 +4,14 @@ class Button < Element
   attr_accessor :button
 
   def initialize(parent,opts={}, &blk)
-    super(opts)
+    super(parent, opts)
     opts[:text] ||= "Button"
     @button = javax.swing.JButton.new(opts[:text])
     @button.add_action_listener(&blk) unless blk.nil?
-		@button.set_location(0,10)
+		@button.set_location(parent.xpos,parent.ypos)
 		@button.set_size(50,35)
-		
-    parent.add(@button)
-		parent.revalidate
-		parent.set_visible(true)
+
+    parent.add(@button, {:width => 50, :height => 30})
     return @button
   end
   
