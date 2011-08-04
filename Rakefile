@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'rake'
+require 'rspec/core/rake_task'
 
 begin
   require 'jeweler'
@@ -18,22 +19,17 @@ begin
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
-#
-#Spec::Rake::SpecTask.new(:spec) do |spec|
-#  spec.libs << 'lib' << 'spec'
-#  spec.spec_files = FileList['spec/**/*_spec.rb']
-#end
-#
-#Spec::Rake::SpecTask.new(:rcov) do |spec|
-#  spec.libs << 'lib' << 'spec'
-#  spec.pattern = 'spec/**/*_spec.rb'
-#  spec.rcov = true
-#end
-#
-#task :spec => :check_dependencies
-#
-#task :default => :spec
-#
+
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = "./spec/**/*_spec.rb" # don't need this, it's default.
+  # Put spec opts in a file named .rspec in root
+end
+
+
+task :spec => :check_dependencies
+
+task :default => :spec
+
 #require 'rake/rdoctask'
 #Rake::RDocTask.new do |rdoc|
 #  version = File.exist?('VERSION') ? File.read('VERSION') : ""
