@@ -1,22 +1,23 @@
 module Shoes
 class App
-    
+	
     attr_accessor :elements,:frame
-    
+
     def initialize(opts={}, &blk)
     @elements = {}
     @frame = javax.swing.JFrame.new()
-    
+
     @global_panel = javax.swing.JPanel.new()
+		@global_panel.set_layout(nil)
     @current_panel = @global_panel
+		opts[:xpos], opts[:ypos], opts[:global] = 0,0, true
     flow(opts, &blk)
-    
-     
     @frame.add(@global_panel)
     @frame.setDefaultCloseOperation(javax.swing.JFrame::EXIT_ON_CLOSE)
-    @frame.pack()
     if(opts[:width] && opts[:height])
       @frame.setSize(opts[:width], opts[:height])
+		else
+			@frame.setSize(700,700)
     end
     @frame.set_visible(true)
   end
@@ -58,20 +59,23 @@ class App
   end
   
   def stack(opts={}, &blk)
-    tstack = Stack.new(opts)
+		opts[:xpos] ||= @current_panel.xpos
+		opts[:ypos] ||= @current_panel.ypos
+    tstack = Stack.new(@current_panel, opts)
     layout(tstack, &blk)
   end
   
   def flow(opts={}, &blk)
-    tflow = Flow.new(opts)
+		opts[:xpos] ||= @current_panel.xpos
+		opts[:ypos] ||= @current_panel.ypos
+    tflow = Flow.new(@current_panel, opts)
     layout(tflow, &blk)
   end
   
   def layout(layer, &blk)
     parent = @current_panel
-    @current_panel = layer.panel
+    @current_panel = layer
     instance_eval &blk
-    parent.add(@current_panel)
     @current_panel = parent
   end
 end
